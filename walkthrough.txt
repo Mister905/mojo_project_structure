@@ -1,0 +1,43 @@
+mkdir App
+
+cd App
+
+touch app.pl
+
+chmod 744 app.pl
+
+morbo ./app.pl
+
+mkdir -p lib/App/Model
+
+touch lib/App/Model/Users.pm
+
+chmod 644 lib/App/Model/Users.pm
+
+** Testing **
+mkdir t
+touch t/login.t
+chmod 644 t/login.t
+
+** Inflating Templates **
+perl app.pl inflate
+
+** Application Class **
+This is the heart of every full Mojolicious application and always gets instantiated during server startup.
+
+touch lib/App.pm
+chmod 644 lib/App.pm
+
+** Application Script **
+app.pl can now be turned into a simplified application script to allow running tests again
+
+** Controller Class **
+mkdir lib/App/Controller
+touch lib/App/Controller/Login.pm
+chmod 644 lib/App/Controller/Login.pm
+
+** Application Class **
+The application class App.pm can now be reduced to model and routing information
+
+** Application Scrip **
+Finally app.pl can be moved into a script directory to follow the CPAN standard
